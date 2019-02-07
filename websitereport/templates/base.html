@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{% block title %}{% endblock title %}</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="freewebsitereport, website worth, website value calculator, website value, backlink checker, traffic, analysis, site stats" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+</script>
+	<!-- //Meta tag Keywords -->
+	<!-- Custom-Files -->
+	<link rel="stylesheet" href="/static/css/bootstrap.css">
+	<!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link rel="stylesheet" href="/static/css/font-awesome.css">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //Custom-Files -->
+	<!-- Web-Fonts -->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+	 rel="stylesheet">
+	<!-- //Web-Fonts -->
+    <style>::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: whitesmoke;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: whitesmoke;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: whitesmoke;
+}</style>
+ <link rel="icon" href="/static/images/favicon.ico" type="image/ico" sizes="16x16">
+</head>
+<body>
+<div class="wrap">
+	<div class="container">
+		<div class="logo text-center">
+			<span class="fa fa-area-chart"></span>
+	<h1><a href="https://freewebsitereport.info" style="color:white;"><strong>Free Website Report</strong></a></h1>
+			
+            <div class="newsletter agile">
+	<p style="color:white;">Track and Measure Your Website's Success.</p>
+            <form action="/lookup" method="GET">
+                <input class="email aitsw3ls" value="{% if data %}http://{{ data.url }}{% endif %}" type="text" name="site" placeholder="Enter website to estimate.." required>
+                <input type="submit" class="submit" value="Lookup">
+            </form>  
+        </div> 
+		</div>
+	</div>
+
+    {% block content %}
+    {% endblock %}
+
+	<div class="container">
+	<footer class="footer-emp-w3ls" id="contact">
+			<div class="row footer-top">
+				<div class="col-lg col-md-6 footer-grid-wthree">
+					 <!--<h3 class="footer-title  text-white mb-4">Contact Us</h3>
+					 <div class="contact_grid_right">
+                    <form action="#" method="post">
+                        <div class="contact_left_grid">
+                            <div class="con-left">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="Name" placeholder="Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="email" name="Email" placeholder="Email" required>
+                                </div>
+								<div class="form-group">
+                                    <textarea id="textarea" placeholder="Message" required></textarea>
+                                </div>
+								<div class="sub-honey mx-auto mt-3">
+									<button class="form-control btn" type="submit">Submit</button> 
+								</div>
+                            </div>
+                        </div>
+                    </form>
+					</div> 
+				</div> -->
+                
+			<!--	<div class="col-lg-6 col-md-6 footer-grid-wthree foot-top">
+					<h3 class="footer-title  text-white mb-4">Address</h3>
+					<div class="contact-info">
+						<div class="footer-style-w3ls">
+							<h4 class="text-light mb-2">Phone</h4>
+							<p>+121 098 8907 9987</p>
+						</div>
+						<div class="footer-style-w3ls my-4">
+							<h4 class="text-light mb-2">Email </h4>
+							<p><a href="mailto:info@example.com">info@example.com</a></p>
+						</div>
+						<div class="footer-style-w3ls">
+							<h4 class="text-light mb-2">Location</h4>
+							<p>Honey Avenue, New York City</p>
+						</div>
+						<ul class="social-icons scial justify-content-end mt-4">
+							<li class="mr-1"><a href="#"><span class="fa fa-facebook"></span></a></li>
+							<li class="mx-1"><a href="#"><span class="fa fa-twitter"></span></a></li>
+							<li class="mx-1"><a href="#"><span class="fa fa-google-plus"></span></a></li>
+							<li class="mx-1"><a href="#"><span class="fa fa-linkedin"></span></a></li>
+						</ul>
+					</div> -->
+				</div>
+			</div>
+		<div class="copy-right-top border-top mt-5">
+			<p class="copy-right text-center text-white pt-xl-5 pt-4">&copy; 2019 Free Website Report. All Rights Reserved.
+			</p>
+		</div>
+	</footer>
+	</div>
+	<!-- //footer -->
+</div>	
+</body>
+</html>

@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from websitereport.views import home, lookup
+from websitereport.views import home, lookup,add, update
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name="index"),
-    path('lookup/', lookup, name="lookup")
+    path('lookup/', lookup, name="lookup"),
+    path('add/', add, name="add"),
+    path('update/<str:url>', update, name="update"),
+
 
 ]

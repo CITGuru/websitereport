@@ -270,41 +270,17 @@
                 <p>Updated every seconds</p>
             </div>
             <!-- //heading title -->
-            <div class="row inner-conent-w3ls">
-                <div class="col-sm-6 inner-conent-lft">
-                    <a href="#" class="banner-button2 btn">Google.com | Worth: $2,000,000, | Alexa: #1 </a>
-                </div>
+            {% for site in recent_site %}
+      <div class="row inner-conent-w3ls">
+        <div class="col-sm-6 inner-conent-lft">
+          <a href="#" class="banner-button2 btn">
+             {{ site.url | title }} | Worth: {{ site.worth }} | Alexa: #{{ site.alexa_rank }}
+          </a>
+        </div>
+      </div>
 
-
-            </div>
-
-            <br>
-
-            <div class="row inner-conent-w3ls">
-                <div class="col-sm-6 inner-conent-lft">
-                    <a href="#" class="banner-button2 btn">YouTube.com | Worth: $1,000,000, | Alexa: #2 </a>
-                </div>
-
-
-            </div>
-
-            <br>
-            <div class="row inner-conent-w3ls">
-                <div class="col-sm-6 inner-conent-lft">
-                    <a href="#" class="banner-button2 btn">YouTube.com | Worth: $1,000,000, | Alexa: #2 </a>
-                </div>
-
-
-            </div>
-
-            <br>
-            <div class="row inner-conent-w3ls">
-                <div class="col-sm-6 inner-conent-lft">
-                    <a href="#" class="banner-button2 btn">YouTube.com | Worth: $1,000,000, | Alexa: #2 </a>
-                </div>
-
-
-            </div>
+      <br />
+      {% endfor %}
 
             <center><a href="recent.html" class="banner-button btn mt-5">View More..</a></center>
 

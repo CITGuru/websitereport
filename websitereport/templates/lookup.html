@@ -7,22 +7,7 @@
 {% block content %}
 <div class="container">
     <div class="main">
-        <header>
-            <div class="px-lg-5 ">
-                <!-- <nav class="mnu mx-auto">
-                          <label for="drop" class="toggle">Menu</label>
-                            <input type="checkbox" id="drop">
-                            <ul class="menu">
-                                <li class="mr-lg-4 mr-3 active"><a href="index.html">Home</a></li>
-                                <li class="mr-lg-4 mr-3"><a href="#about" class="scroll">About Us</a></li>
-                                 <li class="mr-lg-4 mr-3"><a href="#services" class="scroll">Services</a></li>
-                                <li class="mr-lg-4 mr-3"><a href="#stats" class="scroll">Stats</a></li>
-                                <li><a href="#contact" class="scroll">Contact Us</a></li>
-                            </ul>
-                        </nav> -->
-            </div>
-        </header>
-
+        
         <!-- //header -->
         <section class="banner-bottom" id="about">
             <div class="inner-sec">
@@ -273,7 +258,7 @@
             {% for site in recent_site %}
       <div class="row inner-conent-w3ls">
         <div class="col-sm-6 inner-conent-lft">
-          <a href="#" class="banner-button2 btn">
+          <a href="{{site.url}}" class="banner-button2 btn">
              {{ site.url | title }} | Worth: {{ site.worth }} | Alexa: #{{ site.alexa_rank }}
           </a>
         </div>
@@ -282,7 +267,7 @@
       <br />
       {% endfor %}
 
-            <center><a href="recent.html" class="banner-button btn mt-5">View More..</a></center>
+            <center><a href="/recent" class="banner-button btn mt-5">View More..</a></center>
 
 
         </section>

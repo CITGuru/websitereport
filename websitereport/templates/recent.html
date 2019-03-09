@@ -1,0 +1,35 @@
+{% extends "base.html" %} 
+{% block title %} 
+{{ data.url | title }} : Free Website Report - Website Stats, Website Worth Estimation, Website Information.
+{% endblock %} 
+{% block content %}
+<div class="container">
+  <div class="main">
+    <section class="content-inner">
+      <!-- heading title -->
+      <div class="main-title text-center mb-5 pb-3">
+        <h3 class="heading text-capitalize mb-sm-5 mb-4">
+          Recently Analyzed
+        </h3>
+        <p>Updated every seconds</p>
+      </div>
+      <!-- //heading title -->
+      {% for site in recent_site %}
+      <div class="row inner-conent-w3ls">
+        <div class="col-sm-6 inner-conent-lft">
+          <a href="{{ site.url }}" class="banner-button2 btn">
+            {{ site.url | title }} | Worth: {{ site.worth }} | Alexa: #{{ site.alexa_rank }}
+          </a>
+        </div>
+      </div>
+
+      <br />
+      {% endfor %}
+
+      <center>
+        <a href="/recent" class="banner-button btn mt-5">View More..</a>
+      </center>
+    </section>
+  </div>
+</div>
+{% endblock %}

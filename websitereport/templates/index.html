@@ -148,7 +148,7 @@ Website Worth Estimation, Website Information.{% endblock title %}
       {% for site in recent_site %}
       <div class="row inner-conent-w3ls">
         <div class="col-sm-6 inner-conent-lft">
-          <a href="#" class="banner-button2 btn">
+          <a href="/lookup/{{ site.url  }}" class="banner-button2 btn">
              {{ site.url | title }} | Worth: {{ site.worth }} | Alexa: #{{ site.alexa_rank }}
           </a>
         </div>
@@ -184,7 +184,7 @@ Website Worth Estimation, Website Information.{% endblock title %}
                    </div> -->
 
       <center>
-        <a href="recent.html" class="banner-button btn mt-5">View More..</a>
+        <a href="/recent" class="banner-button btn mt-5">View More..</a>
       </center>
     </section>
     <!-- //content-inner -->

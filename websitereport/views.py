@@ -67,15 +67,16 @@ def update(request, url):
     website.seo_info=data["seo_info"]
     website.similar_websites=data["similar_websites"]
     website.save()
-    return redirect(f"/lookup?site={url}")
+    return redirect(f"/lookup/{url}")
 
+def loookup(request):
+    return redirect("/lookup/{}".format(strip_url(request.GET.get("site"))))
 
-def lookup(request):
+def lookup(request, url):
 
     context = {}
     recent_site = recent_analysed()
     context["recent_site"] = recent_site
-    url = request.GET.get("site")
     website = Website.objects.filter(url=strip_url(url))
     if not website.exists():
         data = scrape_site_report(url)
@@ -86,3 +87,11 @@ def lookup(request):
         context["data"] = data
 
     return render(request, "lookup.html", context)
+
+def recent(request):
+    context = {}
+    recent_site = recent_analysed()
+    context["recent_site"] = recent_site
+    return render(request, "recent.html", context)
+
+

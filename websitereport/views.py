@@ -8,9 +8,9 @@ from report.scrapper.utils import strip_url
 def recent_analysed(limit=10):
     if limit:
         if limit == "all":
-            website = Website.objects.all().order_by("created")
+            website = Website.objects.all().order_by("-created")
         else:
-            website = Website.objects.all().order_by("created")[:limit]
+            website = Website.objects.all().order_by("-created")[:limit]
     return website
 
 

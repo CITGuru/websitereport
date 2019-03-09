@@ -5,8 +5,12 @@ from report.scrapper.utils import strip_url
 # Create your views here.
 
 
-def recent_analysed():
-    website = Website.objects.all().order_by("created")[:10]
+def recent_analysed(limit=10):
+    if limit:
+        if limit == "all":
+            website = Website.objects.all().order_by("created")
+        else:
+            website = Website.objects.all().order_by("created")[:limit]
     return website
 
 
@@ -90,7 +94,7 @@ def lookup(request, url):
 
 def recent(request):
     context = {}
-    recent_site = recent_analysed()
+    recent_site = recent_analysed("all")
     context["recent_site"] = recent_site
     return render(request, "recent.html", context)
 

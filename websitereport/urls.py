@@ -21,6 +21,7 @@ urlpatterns = [
     path('', home, name="index"),
     path('loookup/', loookup, name="loookup"),
     path('recent/', recent, name="recent"),
+    path('lookup/', loookup, name="lookup"),
     path('lookup/<str:url>', lookup, name="lookup"),
     path('add/', add, name="add"),
     path('update/<str:url>', update, name="update"),

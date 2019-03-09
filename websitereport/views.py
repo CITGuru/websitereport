@@ -26,31 +26,51 @@ def add(request):
 
 
 def create_website(data):
-    website = Website.objects.create(
-        name=data.get("name"),
-        url=data.get("url"),
-        age=data.get("age"),
-        worth=data["worth"],
-        daily_unique_users=data["daily_unique_users"],
-        daily_page_views=data["daily_page_views"],
-        daily_revenue=data["daily_revenue"],
-        alexa_rank=data["alexa_rank"],
-        website_info=data["website_info"],
-        basic_info=data["basic_info"],
-        dns_info=data["dns_info"],
-        whois_info=data["whois_info"],
-        ip_info=data["ip_info"],
-        seo_info=data["seo_info"],
-        similar_websites=data["similar_websites"]
-    )
+    # website = Website.objects.create(
+    #     name=data.get("name"),
+    #     url=data.get("url"),
+    #     age=data.get("age"),
+    #     worth=data["worth"],
+    #     daily_unique_users=data["daily_unique_users"],
+    #     daily_page_views=data["daily_page_views"],
+    #     daily_revenue=data["daily_revenue"],
+    #     alexa_rank=data["alexa_rank"],
+    #     website_info=data["website_info"],
+    #     basic_info=data["basic_info"],
+    #     dns_info=data["dns_info"],
+    #     whois_info=data["whois_info"],
+    #     ip_info=data["ip_info"],
+    #     seo_info=data["seo_info"],
+    #     similar_websites=data["similar_websites"]
+    # )
+    site_data = data
+    site_data.pop("website")
+    site_data.pop("success")
+    site_data.pop("code")
+
+    website = Website.objects.create(**site_data)
     return website
 
 
 def scrape_site_report(url):
-    data = siteworthtraffic.scrape_report(url)
-    data.update(websiteoutlook.scrape_report(url))
-    data.update(cutestat.scrape_report(url))
-    data.update(alexa.scrape_report(url))
+    data = {}
+    try:
+        data.update(siteworthtraffic.scrape_report(url))
+    except:
+        pass
+    try:
+        data.update(websiteoutlook.scrape_report(url))
+    except:
+        pass
+
+    try: 
+        data.update(cutestat.scrape_report(url))
+    except:
+        pass
+    try: 
+        data.update(alexa.scrape_report(url))
+    except:
+        pass
     return data
 
 def update(request, url):
